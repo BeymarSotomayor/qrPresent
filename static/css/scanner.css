@@ -1,0 +1,86 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #0f172a;
+    height: 100vh;
+}
+
+/* GRID CENTRAL */
+.app-grid {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+/* SIMULACIÓN DISPOSITIVO MÓVIL */
+.mobile-frame {
+    width: 100%;
+    max-width: 390px;       /* iPhone-like */
+    height: 100%;
+    max-height: 720px;
+    background: #020617;
+    border-radius: 24px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,.6);
+}
+
+/* HEADER */
+.app-header {
+    padding: 1rem;
+    text-align: center;
+    background: #020617;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* SCANNER */
+.scanner-area {
+    position: relative;
+    background: black;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MARCO DE ESCANEO */
+/* MARCO DE ESCANEO */
+.scan-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    max-width: 260px;
+    aspect-ratio: 1 / 1; /* 🔥 CUADRADO PERFECTO */
+    transform: translate(-50%, -50%);
+    border: 2px solid #6366f1;
+    border-radius: 16px;
+    box-shadow: 0 0 15px #7c3aed;
+}
+
+
+/* FOOTER */
+.app-footer {
+    padding: 1rem;
+    text-align: center;
+    background: #020617;
+    color: #94a3b8;
+    font-size: .9rem;
+}
+
+/* RESPONSIVE TABLET */
+@media (min-width: 768px) {
+    .mobile-frame {
+        max-width: 420px;
+    }
+}

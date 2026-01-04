@@ -1,0 +1,36 @@
+
+{% block contenido %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap-lumen.css' %}"> -->
+</head>
+
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<link rel="stylesheet" href="{% static 'css/scanner.css' %}">
+<div class="app-grid">
+    <div class="mobile-frame">
+        <header class="app-header">
+            <h1>QR Present</h1>
+        </header>
+
+        <main class="scanner-area">
+            <video id="video" autoplay playsinline></video>
+            <div class="scan-overlay"></div>
+        </main>
+
+        <footer class="app-footer">
+            <p id="result">Esperando escaneo…</p>
+        </footer>
+    </div>
+</div>
+
+<script src="{% static 'js/scanner.js' %}"></script>
+
+{% endblock contenido %}
