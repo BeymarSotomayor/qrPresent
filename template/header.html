@@ -1,78 +1,81 @@
 <div class="navigation">
-        <ul>
-            <li>
-                <a href="{% url 'dashboard' %}">
-                    <span class="icon"><ion-icon name="qr-code"></ion-icon></span>
-                    <span class="title">QR Present</span>
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'dashboard' %}">
-                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">Panel</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                    <span class="title">Cliente</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
-                    <span class="title">Mensajes</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
-                    <span class="title">Ayuda</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                    <span class="title">Configuración</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <span class="title">Contraseña</span>
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'scan_view' %}">
-                    <span class="icon"><ion-icon name="qr-code-outline"></ion-icon></span>
-                    <span class="title">Escáner</span>
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'logout' %}">
-                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                    <span class="title">Cerrar Sesión</span>
-                </a>
-            </li>
-        </ul>
-        <div class="toggle"></div>
-    </div>
+    <ul>
+        <li>
+            <a href="{% url 'dashboard' %}">
+                <span class="icon"><ion-icon name="qr-code"></ion-icon></span>
+                <span class="title">QR Present</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'dashboard' %}">
+                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                <span class="title">Panel</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <span class="title">Cliente</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                <span class="title">Mensajes</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
+                <span class="title">Ayuda</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                <span class="title">Configuración</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                <span class="title">Contraseña</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'scan_view' %}">
+                <span class="icon"><ion-icon name="qr-code-outline"></ion-icon></span>
+                <span class="title">Escáner</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'logout' %}">
+                <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                <span class="title">Cerrar Sesión</span>
+            </a>
+        </li>
+    </ul>
+    <div class="toggle"></div>
+</div>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <script>
-        let navigations = document.querySelector('.navigation');
-        let toggle = document.querySelector('.toggle');
-        toggle.onclick = function(){
-            navigations.classList.toggle('active')
-        }
-    </script>
-    <script>
+<script>
+    let navigations = document.querySelector('.navigation');
+    let toggle = document.querySelector('.toggle');
+    toggle.onclick = function () {
+        navigations.classList.toggle('active')
+    }
+</script>
+<script>
     const body = document.body;
     const navigation = document.querySelector('.navigation');
 
-    let navVisible = false; // estado del menú
+    let navVisible = true; // ⬅ empieza VISIBLE
+
+    // Asegurar que al cargar esté visible
+    navigation.style.transform = 'translateX(0%)';
 
     body.addEventListener('click', () => {
         navVisible = !navVisible;
@@ -82,11 +85,12 @@
             : 'translateX(-120%)';
     });
 
-    // Evita cerrar cuando se hace click dentro del menú
+    // Evita que se oculte al hacer click dentro del menú
     navigation.addEventListener('click', (e) => {
         e.stopPropagation();
     });
 </script>
+
 
 
 </div>
