@@ -19,9 +19,6 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from qrPresent import settings
 
-from app.admins import views as admin_views
-from django.urls import path,include
-from app.admins.views import login_view
 
 urlpatterns = [
     path('admin-django/', admin.site.urls),
