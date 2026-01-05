@@ -13,4 +13,4 @@ añadir_repositorio.txt
 /app/admins/migrations/__pycache__
 /node_modules
 .env
-db.sqlite3
+/db.sqlite3
