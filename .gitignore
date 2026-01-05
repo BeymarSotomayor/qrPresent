@@ -12,5 +12,5 @@ añadir_repositorio.txt
 /app/admins/__pycache__
 /app/admins/migrations/__pycache__
 /node_modules
-.gitignore
 .env
+db.sqlite3
