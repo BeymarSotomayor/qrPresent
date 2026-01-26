@@ -7,6 +7,25 @@
 {% block contenido %}
 {% load static %}
 
+{% if messages %}
+{% for message in messages %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+                Swal.fire({
+                    icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
+                    title: "{{ message }}",
+                    toast: true,
+                    position: 'top',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+            
+        });
+    </script>
+{% endfor %}
+{% endif %}
 
 
 {% endblock contenido %}

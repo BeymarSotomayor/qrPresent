@@ -40,16 +40,27 @@
                 <!-- <h2 class="text-center mb-2">Iniciar Sesión</h2>
                 <p class="text-center text-secondary mb-4">Accede a tu panel</p> -->
 
-                <!-- Mensajes Django -->
+                <!-- Mensajes con SweetAlert2 -->
                 {% if messages %}
                 {% for message in messages %}
-                <div class="alert alert-{{ message.tags }} text-center">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        Swal.fire({
+                            icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
+                            title: "{{ message }}",
+                            toast: true,
+                            position: 'top',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true
+                        });
+                    });
+                </script>
                 {% endfor %}
                 {% endif %}
+
+                <!-- Mensajes Django -->
+
 
                 <form method="POST">
                     {% csrf_token %}
@@ -120,6 +131,7 @@
                 : '<i class="fas fa-eye"></i>';
         });
     </script>
+    <script src="{% static 'js/sweetalert2.all.js' %}"></script>
 
 </body>
 

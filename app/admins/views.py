@@ -35,12 +35,12 @@ def login_view(request):
                 
                 if authenticated_user is not None:
                     login(request, authenticated_user)
-                    messages.success(request, '¡Inicio de sesión exitoso!')
+                    messages.success(request, '¡Bienvenido! 😃👋')
                     return redirect('dashboard')
                 else:
                     messages.error(request, 'Contraseña incorrecta')
             else:
-                messages.error(request, 'No existe un usuario con este correo')
+                messages.error(request, 'Este correo no está registrado')
     else:
         form = LoginForm()
     
@@ -49,7 +49,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    messages.success(request, 'Has cerrado sesión correctamente')
+    messages.success(request, 'Hasta luego 😃👋')
     return redirect('login')
 
 def dashboard_view(request):
