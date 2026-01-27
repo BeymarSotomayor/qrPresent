@@ -19,12 +19,35 @@
                     position: 'top',
                     showConfirmButton: false,
                     timer: 3000,
-                    timerProgressBar: true
+                    timerProgressBar: true,
+                    customClass: {
+                        timerProgressBar: 'bar_sweetalert2'
+                    }
                     
                 });
             
         });
     </script>
+
+    {% if message.tags == 'success' %}
+    <style>
+        .bar_sweetalert2 {
+            background-color: #a5dc86  !important; /* Tu color aquí */
+        }
+    </style>
+    {% elif message.tags == 'error' %}
+    <style>
+        .bar_sweetalert2 {
+            background-color: #f27474  !important; /* Tu color aquí */
+        }
+    </style>
+    {% else %}
+    <style>
+        .bar_sweetalert2 {
+            background-color: #3fc3ee  !important; /* Tu color aquí */
+        }
+    </style>
+    {% endif %}
 {% endfor %}
 {% endif %}
 
