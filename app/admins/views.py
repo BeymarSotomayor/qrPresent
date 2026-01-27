@@ -38,9 +38,9 @@ def login_view(request):
                     messages.success(request, '¡Bienvenido! 😃👋')
                     return redirect('dashboard')
                 else:
-                    messages.error(request, 'Contraseña incorrecta')
+                    messages.error(request, 'Contraseña incorrecta 😔')
             else:
-                messages.error(request, 'Este correo no está registrado')
+                messages.error(request, 'Este correo no está registrado 😔')
     else:
         form = LoginForm()
     
